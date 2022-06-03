@@ -26,6 +26,43 @@ $ sh ./scripts/backup.sh
 $ sh ./scripts/update.sh
 ```
 
+## Config yabai
+
+```sh
+# Install
+brew install koekeishiya/formulae/yabai
+
+# install the scripting addition
+sudo yabai --install-sa
+
+# if macOS Big Sur or Monterey, load the scripting addition manually; follow instructions below to automate on startup
+sudo yabai --load-sa
+
+# start yabai
+brew services start yabai
+```
+
+```sh
+# set start when booting
+sudo visudo -f /private/etc/sudoers.d/yabai
+```
+
+```plaintext
+# replace <user> with your username (output of: whoami). 
+# change the path to the yabai binary if necessary  (output of: which yabai)
+<user> ALL = (root) NOPASSWD: /usr/local/bin/yabai --load-sa
+```
+
+## Config skhd
+
+```sh
+# Install
+brew install koekeishiya/formulae/skhd
+
+# Start
+brew services start skhd
+```
+
 ## Config your git
 ```sh
 # git 配置
@@ -49,6 +86,7 @@ brew install git-delta
 brew install gpg
 
 # 配置 gpg
+gpg --gen-key
 gpg --full-generate-key --expert
 gpg --list-secret-keys --keyid-format LONG
 

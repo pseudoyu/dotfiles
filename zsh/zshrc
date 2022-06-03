@@ -50,25 +50,17 @@ alias gll="git ll"
 alias gcz="git cz"
 alias gm="git merge"
 alias gamd="git commit --amend --no-edit"
+alias vi="nvim"
+alias vim="nvim"
 
 # 设置代理
 
 alias proxy="export https_proxy=http://127.0.0.1:6152 http_proxy=http://127.0.0.1:6152 all_proxy=socks5://127.0.0.1:6153"
 alias unproxy="unset http_proxy && unset https_proxy && unset all_proxy"
 
-# 文件类型判断
-alias -s go=code
-alias -s py=code
-alias -s java=code
-alias -s txt=code
-alias -s md=code
-alias -s json=code
-
 # Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="spaceship"
-SPACESHIP_TIME_SHOW="true"
-SPACESHIP_USER_SHOW="always"
-SPACESHIP_USER_COLOR="212"
 
 # 插件管理
 plugins=(
