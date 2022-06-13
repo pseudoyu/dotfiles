@@ -7,6 +7,7 @@
 	editor = code --wait
 	pager = delta
 	quotepath = off
+    ignorecase = false
 [init]
 	defaultBranch = master
 [commit]
@@ -61,16 +62,42 @@
     required = true
     clean = git media clean %f
     smudge = git media smudge %f
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[hub]
+    protocol = https
+[github]
+	user = pseudoyu
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [alias]
-	ls = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	ll = log --graph --stat --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    a = "!git status --short | peco | awk '{print $2}' | xargs git add"
+    d = diff
 	co = checkout
-	st = status -sb
 	ci = commit
-	cm = commit -m
+    ca = commit -a
+    amd= commit --amend --no-edit
+    ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+    pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
+    st = status
 	br = branch
-	mg = merge
-	cp = cherry-pick
+    ba = branch -a
+    bm = branch --merged
+    bn = branch --no-merged
+    df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}"
+    hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+    llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+    ls = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ll = log --graph --stat --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	last = log -1
 	lg = log \
         --all \
@@ -88,6 +115,14 @@
         --decorate \
         --format=format:'%C(magenta)%h%C(reset) - %C(dim magenta)%ad%C(reset) %C(yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim magenta)%ar%C(reset) %C(dim white)- %an <%ae>%C(reset)'
     lol = log --graph --decorate --abbrev-commit --pretty=format
+    open = "!hub browse"
+    type = cat-file -t
+    dump = cat-file -p
+    find = "!f() { git log --pretty=format:\"%h %cd [%cn] %s%d\" --date=relative -S'pretty' -S\"$@\" | peco | awk '{print $1}' | xargs -I {} git diff {}^ {}; }; f"
+    # edit conflicted file on merge
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+    # add conflicted file on merge
+    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
     tags = tag -n --sort=v:refname -l
     tags-v = tag -n99 --sort=v:refname -l
 	# NOTE Dangerous, use with caution
