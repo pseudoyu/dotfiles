@@ -18,7 +18,9 @@
 	default = current
 	followTags = true
 [pull]
-	ff = only
+    rebase = true
+[remote "origin"]
+	prune = true
 [merge]
     log = true
 [color]
