@@ -25,10 +25,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias gs="git status"
-alias ga='git add'
-alias gpl="git pull"
-alias gps="git push"
 alias gcz="git cz"
 
 alias docker-up="colima start docker"
