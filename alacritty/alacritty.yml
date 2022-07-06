@@ -1,0 +1,16 @@
+live_config_reload: true
+
+window:
+  opacity: 0.85
+  padding:
+    x: 18
+    y: 16
+  dynamic_padding: false
+  decorations: buttonless
+
+font:
+  normal:
+    family: "MesloLGSDZ Nerd Font Mono"
+    style: Regular
+  size: 13.0
+  use_thin_strokes: true
