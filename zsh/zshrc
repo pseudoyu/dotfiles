@@ -35,10 +35,6 @@ alias vim="nvim"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-# ZSH_THEME="spaceship"
-# SPACESHIP_TIME_SHOW="true"
-# SPACESHIP_USER_SHOW="always"
-# SPACESHIP_USER_COLOR="212"
 eval "$(starship init zsh)"
 
 # 插件管理

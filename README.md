@@ -126,8 +126,7 @@ sudo apt install wget git curl
 
 # Theme
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+curl -sS https://starship.rs/install.sh | sh
 
 # zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -147,10 +146,7 @@ git clone https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-z
 
 ### Add these lines to .zshrc
 ```sh
-ZSH_THEME="spaceship"
-SPACESHIP_TIME_SHOW="true"
-SPACESHIP_USER_SHOW="always"
-SPACESHIP_USER_COLOR="212"
+eval "$(starship init zsh)"
 ```
 
 ## Before Installing Vim
