@@ -21,7 +21,7 @@ font:
     style: Regular
   size: 13.0
   use_thin_strokes: true
-
+  
 mouse:
   hide_when_typing: true
 
@@ -50,7 +50,7 @@ key_bindings:
   # Split the current pane into two, top and bottom.
   - { key: D, mods: Command|Shift, chars: "\x02\x22" }
   # Detach the current tmux client
-  - { key: X, mods: Command, chars: "\x02\x64" }
+  - { key: W, mods: Command|Shift, chars: "\x02\x64" }
   # Change to the next tmux window
   - { key: RBracket, mods: Command|Shift, chars: "\x02\x6e" }
   # Type <escape>:w<enter> to save neovim
@@ -60,6 +60,6 @@ key_bindings:
   # Break the current tmux pane out of the tmux window
   - { key: T, mods: Command|Shift, chars: "\x02\x21" }
   # Kill the current tmux pane (and window if last pane)
-  - { key: W, mods: Command, chars: "\x02\x78" }
+  - { key: X, mods: Command, chars: "\x02\x78" }
   # Toggle the zoom state of the current tmux pane
   - { key: Z, mods: Command, chars: "\x02\x7a" }
