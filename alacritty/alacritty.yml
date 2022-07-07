@@ -1,5 +1,12 @@
 live_config_reload: true
 
+env:
+  TERM: xterm-256color
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+
 window:
   opacity: 0.85
   padding:
@@ -14,3 +21,6 @@ font:
     style: Regular
   size: 13.0
   use_thin_strokes: true
+
+mouse:
+  hide_when_typing: true
