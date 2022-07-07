@@ -1,31 +1,6 @@
 # dotfiles
 My macOS and Linux Configuration Files
 
-## Install
-```sh
-$ git clone https://github.com/pseudoyu/dotfiles.git ~/.dotfiles
-$ cd ~/.dotfiles
-$ sh ./setup.sh
-
-or config what you need
-
-$ sh ./scripts/brew.sh
-$ sh ./scripts/npm.sh
-$ sh ./scripts/vim.sh
-$ sh ./scripts/rime.sh
-$ sh ./scripts/hammerspoon.sh
-```
-
-## Back up your configuration if you want
-```sh
-$ sh ./scripts/backup.sh
-```
-
-## Update latest local configuration to .dotfiles if you want
-```sh
-$ sh ./scripts/update.sh
-```
-
 ## Config yabai
 
 ```sh
