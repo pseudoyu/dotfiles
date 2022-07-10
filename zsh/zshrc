@@ -7,10 +7,10 @@ alias cp='cp -i'
 alias mv="mv -i"
 alias rm='rm -i'
 
-alias ls='ls -F'
-alias l="ls -l"
-alias la="ls -a"
-alias ll="ls -la"
+alias ls='exa -F'
+alias l="exa -l"
+alias la="exa -a"
+alias ll="exa -la"
 alias lt="ls -lhtrF"
 alias l.="ls -lhtrdF .*"
 alias lla='ls -la'
