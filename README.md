@@ -72,6 +72,7 @@ gpg --armor --export 3AA5C34371567BD2
 sudo apt-get install gnupg2
 
 # 配置 gpg
+gpg2 --gen-key
 gpg2 --full-generate-key --expert
 gpg2 --list-secret-keys --keyid-format LONG
 
