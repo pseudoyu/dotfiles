@@ -23,7 +23,7 @@ sudo visudo -f /private/etc/sudoers.d/yabai
 ```
 
 ```plaintext
-# replace <user> with your username (output of: whoami). 
+# replace <user> with your username (output of: whoami).
 # change the path to the yabai binary if necessary  (output of: which yabai)
 <user> ALL = (root) NOPASSWD: /usr/local/bin/yabai --load-sa
 ```
@@ -56,6 +56,13 @@ brew install git-delta
 ```
 
 ## Git gpg config
+
+### Use 1Password ssh agent to config automatically
+
+https://developer.1password.com/docs/ssh/agent/
+
+### Use gpg to config manually
+
 ```sh
 # macOS安装 gpg
 brew install gpg
