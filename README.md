@@ -104,6 +104,13 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
 
 ## zsh Conf
+
+### Use x-cmd to config
+
+https://cn.x-cmd.com/
+
+### Config manually
+
 ```sh
 sudo apt install wget git curl
 
