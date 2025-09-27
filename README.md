@@ -91,10 +91,10 @@ echo 'export GPG_TTY=$(tty)' >> ~/.zshrc
 source ~/.zshrc
 ```
 
-## git-cz and git-chglog config
+## czg git-chglog config
 ```sh
-# 安装 git-cz
-npm install -g commitizen
+# 安装 czf
+npm install -g czg
 
 # 安装 changelog
 npm install -g cz-conventional-changelog
