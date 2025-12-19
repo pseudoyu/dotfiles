@@ -162,11 +162,6 @@ mkdir -p $HOME/go/{bin,pkg,src}
 ```
 
 ### Add these lines to .zshrc
-```sh
-export GOPATH=$HOME/go
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-```
 
 ## Rust Setting
 ```sh
